@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './core/core.module';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { UserModule } from './user/user.module';
+
 
 
 @NgModule({
@@ -15,13 +15,13 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     AboutComponent,
     HomeComponent,
-    LoginComponent,
-    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     HeaderModule,
+    UserModule,
     AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
