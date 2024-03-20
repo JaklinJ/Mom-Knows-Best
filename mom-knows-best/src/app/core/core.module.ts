@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationComponent } from './header/navigation.component';
 import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -11,7 +12,7 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, AppRoutingModule
   ],
   exports: [NavigationComponent, FooterComponent]
 })

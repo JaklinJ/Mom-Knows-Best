@@ -46,27 +46,7 @@ body {
   header .site-logo h1 a span {
     color: #ff9000;
   }
-  header.smaller {
-    padding: 0px 0px 0px 0px;
-    height: 60px;
-    transition: all 0.3s;
-    background: rgba(0, 0, 0, 0.75);
-  }
-  header.smaller .site-logo {
-    padding: 13px 0px 0px 0px;
-  }
-  header.smaller .site-logo h1 {
-    line-height: 30px;
-  }
-  header.smaller .site-logo h1 a {
-    font-size: 30px;
-  }
-
-.Navigation {
-    float: right;
-    width: 68.18%;
-    margin-right: 11px;
-  }
+ 
   .Navigation ul {
     list-style: none;
     margin: 0px;
@@ -91,7 +71,7 @@ body {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
-  .Navigation li span {
+  /* .Navigation li span {
     border-bottom: solid 10px #f88f05;
     background: rgb(58, 91, 129);
     background: -webkit-gradient(
@@ -119,17 +99,17 @@ body {
     z-index: -10;
     opacity: 0;
     transition: all 0.5s ease;
-  }
-  .Navigation li:hover span,
+  } */
+  /* .Navigation li:hover span,
   .Navigation li.active span {
     opacity: 1;
-  }
+  } */
   
-  header.smaller .Navigation li a {
+  /* header.smaller .Navigation li a {
     padding: 16px 41px;
-  }
-  header.smaller .Navigation li {
+  } */
+  /* header.smaller .Navigation li {
     height: 60px;
   }
-  
+   */
   
