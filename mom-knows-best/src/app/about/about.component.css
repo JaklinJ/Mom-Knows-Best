@@ -135,3 +135,8 @@
     background: rgba(64, 93, 118, 0.8);
     transition: all 0.3s ease;
   }
+
+  .About_sec .Tabside .Description a:hover {
+    color: white;
+    background-color: #ff9000;
+  }

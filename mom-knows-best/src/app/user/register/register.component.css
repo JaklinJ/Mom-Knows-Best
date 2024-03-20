@@ -65,6 +65,11 @@ button {
   transition: all 0.3s ease;
 }
 
+button:hover {
+  background-color: #2d2d2d;
+  color: white;
+}
+
 .msg {
   font-size: 12px;
   color: #979797;
