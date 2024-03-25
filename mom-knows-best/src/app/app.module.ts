@@ -7,6 +7,8 @@ import { HeaderModule } from './core/core.module';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
+import { ContactComponent } from './contact/contact.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,12 +17,14 @@ import { UserModule } from './user/user.module';
     AppComponent,
     AboutComponent,
     HomeComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     HeaderModule,
     UserModule,
     AppRoutingModule,
+    RouterModule
     
   ],
   providers: [],
