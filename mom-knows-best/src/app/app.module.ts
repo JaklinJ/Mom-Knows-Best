@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
+import { MomApprovedModule } from './mom-approved/mom-approved.module';
 
 
 
@@ -23,6 +24,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     HeaderModule,
     UserModule,
+    MomApprovedModule,
     AppRoutingModule,
     RouterModule
     
