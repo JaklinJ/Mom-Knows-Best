@@ -10,7 +10,10 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:4200'],
+    credentials: true
+    }))
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/blog', {

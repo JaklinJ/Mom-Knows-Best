@@ -57,7 +57,7 @@
     margin: auto;
   }
   .Banner_sec .leftside {
-    padding: 92px 0px 0px 0px;
+    padding: 240px 20px 0px 0px;
     width: 28.9%;
     float: left;
   }
@@ -80,6 +80,7 @@
     padding: 16px 0px 26px 0px;
     font-size: 16px;
     color: #fff;
+   
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-style: italic;

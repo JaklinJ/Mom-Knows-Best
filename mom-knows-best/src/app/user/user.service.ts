@@ -31,14 +31,14 @@ export class UserService {
   
     login(username: string, password: string) {
       return this.http
-      .post<User>(`${apiUrl}/login`, { username, password })
+      .post<User>(`/api/login`, { username, password })
       .pipe(tap((user) => {
         this.user$$.next(user);
       }))
     }
   
     register(username: string,  password: string, rePassword: string) {
-      return this.http.post<User>(`${apiUrl}/register`, {username, password, rePassword})
+      return this.http.post<User>(`/api/register`, {username, password, rePassword})
       .pipe(tap((user) => this.user$$.next(user)));
     }
   

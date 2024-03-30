@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MomApprovedModule } from './mom-approved/mom-approved.module';
+import { AppInterceptor, appInterceptorProvider } from './app.interceptor';
 
 
 
@@ -31,7 +32,7 @@ import { MomApprovedModule } from './mom-approved/mom-approved.module';
     RouterModule,
     
   ],
-  providers: [],
+  providers: [appInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
