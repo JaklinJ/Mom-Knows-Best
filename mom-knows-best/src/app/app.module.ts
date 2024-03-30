@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { MomApprovedModule } from './mom-approved/mom-approved.module';
 
 
@@ -24,9 +25,10 @@ import { MomApprovedModule } from './mom-approved/mom-approved.module';
     BrowserModule,
     HeaderModule,
     UserModule,
+    HttpClientModule,
     MomApprovedModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
     
   ],
   providers: [],
