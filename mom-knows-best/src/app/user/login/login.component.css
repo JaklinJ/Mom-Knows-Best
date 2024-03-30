@@ -85,3 +85,6 @@
   .msg a{
     color: #e2850a;
   }
+  .error {
+    color: red;
+  }

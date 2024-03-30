@@ -8,7 +8,8 @@
                <div class="mobile"><i class="fa fa-bars"></i><i class="fa fa-times"></i></div>
                 <div class="menumobile">
                     <!-- \\ Begin Navigation \\ -->
-                    <nav class="Navigation">
+                   
+                    <nav *ngIf="!isLoggedIn" class="Navigation">
                         <ul>
                             <li class="active">                                
                                 <a routerLink="/home">Home</a>
@@ -16,14 +17,13 @@
                             </li>
                             <li class="active">
                                 <a routerLink="/about">About</a>
-                               
                             </li>
                             <li class="active">
                                 <a routerLink="/mom-approved">Mom Approved</a>
                                
                             </li>
                             <li class="active">
-                                <a routerLink="add-place">Add a place</a>
+                                <a routerLink="/contact">Contact</a>
                                 
                             </li>
                             <li class="active">
@@ -34,6 +34,30 @@
                                 <a routerLink="/register">Register</a>
                               
                             </li>
+                           
+                        </ul>
+                    </nav>
+                    <nav class="Navigation" *ngIf="isLoggedIn">
+                        <ul>
+                            <li class="active">                                
+                                <a routerLink="/home">Home</a>
+                                
+                            </li>
+                            <li class="active">
+                                <a routerLink="/about">About</a>
+                            </li>
+                            <li class="active">
+                                <a routerLink="/mom-approved">Mom Approved</a>
+                               
+                            </li>
+                            
+                            <li class="active">
+                                <a routerLink="add-place">Add a place</a>
+                                
+                            </li>
+                            <li class="active">
+                                <a routerLink="profile">Profile</a>
+                            </li>
                             <li class="active">
                                 <a href="#pricing">Logout</a>
                                 
@@ -43,6 +67,7 @@
                                 
                             </li>
                         </ul>
+                        
                     </nav>
                     <!-- // End Navigation // -->
                 </div>
