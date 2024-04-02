@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MomApprovedModule } from './mom-approved/mom-approved.module';
 import { AppInterceptor, appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 
 
@@ -21,6 +22,7 @@ import { AppInterceptor, appInterceptorProvider } from './app.interceptor';
     AboutComponent,
     HomeComponent,
     ContactComponent,
+    AuthenticateComponent,
   ],
   imports: [
     BrowserModule,

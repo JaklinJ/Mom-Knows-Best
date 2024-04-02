@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.post-container {
+  margin: 0px 50px;
+  display: flex;
+  align-items: flex-start; /* Align items at the start */
+  justify-content: space-around; /* Evenly distribute items along the main axis */
+  flex-wrap: wrap;
+}
+
+.profile-card {
+  max-width: 400px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.photo img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.profile-header {
+  background-color: #ff9000;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px;
+}
+
+.profile-info {
+  padding: 20px;
+}
+
+.profile-info-item {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+
+.post-card {
+  width: calc(50% - 20px); /* 50% width with some spacing between cards */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.post-card h3 {
+  color: #ff9000;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+.post h4 {
+  margin-bottom: 10px;
+}
+
+.post-photo img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

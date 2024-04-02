@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { emailValidator } from 'src/app/shared/utils/email-validator';
 import { matchPasswordsValidator } from 'src/app/shared/utils/match-passwords-validator';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
+
 
 
 
@@ -26,14 +25,14 @@ export class RegisterComponent {
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {}
 
   register(): void {
-    debugger
+   
     if (this.form.invalid) {
       return;
     }
 
 
     const {username,  passGroup: {password, rePassword} = {}} = this.form.value;
-    debugger;
+    
     this.userService.register(username!, password!, rePassword!).subscribe(() => {
         this.router.navigate(['/home'])
     });

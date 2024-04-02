@@ -20,8 +20,8 @@ get username(): string {
 
 logout() {
   this.userService.logout().subscribe({
-    next: () => this.router.navigate(['/auth/login']),
-    error: () => this.router.navigate(['/auth/login'])
+    next: () => this.router.navigate(['/login']),
+    error: () => this.router.navigate(['/login'])
   });
 }
   

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { UserService } from '../user.service';
+import { catchError, map, throwError } from 'rxjs';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,5 +9,53 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  username: string = '';
+  likedPosts: any[] = [];
+  unlikedPosts: any[] = [];
+  id: string[] = []
+  
+  
+  constructor(private userService: UserService, private apiService: ApiService) { }
 
+  ngOnInit(): void {
+    this.fetchUserProfile();
+   
+  }
+
+  fetchUserProfile(): void {
+    this.userService.getUserProfile()
+      .pipe(
+        map((profileData: any) => {
+          
+          this.username = profileData.username;
+          this.likedPosts = profileData.likedPosts;
+          this.unlikedPosts = profileData.unlikedPosts;
+          this.id.push(profileData.likedPosts)
+          
+          this.likedPosts.forEach(data => {
+            
+            this.apiService.getSinglePost(data).subscribe((item) => {
+              this.post.push(item);
+              console.log(this.post);
+              
+            })
+          })
+        }),
+        catchError(error => {
+          console.error('Error fetching user profile:', error);
+          return throwError(error);
+        })
+      )
+      .subscribe();
+  }
+
+  post: any[] = [];
+    
+
+ 
+  
 }
+
+
+
+

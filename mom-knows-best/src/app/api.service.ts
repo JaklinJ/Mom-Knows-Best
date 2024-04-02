@@ -3,33 +3,44 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getPosts() {
     const { apiUrl } = environment;
-//change the type when i create them
-    return this.http.get<any>(`${apiUrl}/mom-approved`)
+    //change the type when i create them
+    return this.http.get<any>(`${apiUrl}/mom-approved`);
   }
 
-getPost(id: string) {
-  const {apiUrl} = environment;
-  //change the type
-  return this.http.get<any>(`${apiUrl}/mom-approved/${id}`)
+  getSinglePost(id: string) {
+    const { apiUrl } = environment;
+    //change the type
+    return this.http.get<any>(`${apiUrl}/mom-approved/${id}`);
+  }
 
-}
+  createPost(
+    title: string,
+    type: string,
+    location: string,
+    imageUrl: string,
+    rating: number,
+    description: string
+  ) {
+    const { apiUrl } = environment;
+    const payload = { title, type, location, imageUrl, rating, description };
+    return this.http.post<any>(`${apiUrl}/mom-approved`, payload, {
+      withCredentials: true,
+    });
+  }
 
+  likePost(id: string) {
+    const {apiUrl} = environment;
+    return this.http.post<any>(`${apiUrl}/mom-approved/${id}/like`, {}, {withCredentials: true});
+  }
 
+  unlikePost() {
 
-// createTheme(themeName: string, postText: string) {
-//   const {apiUrl} = environment;
-//   const payload = {themeName, postText};
-  
-//  return this.http.post<any>(`${apiUrl}/mom-approved`, payload)
-// }
-
-  
+  }
 }

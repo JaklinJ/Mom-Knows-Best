@@ -48,8 +48,14 @@ export class UserService {
     }
   
   getProfile() {
-    return this.http.get<User>('/api/users/profile').pipe(tap((user) =>
+    return this.http.get<User>('/api/profile').pipe(tap((user) =>
       this.user$$.next(user)))
+  }
+
+  getUserProfile() {
+    return this.http.get<any>('/api/profile').pipe(tap((user) => 
+      this.user$$.next(user)))
+    
   }
   
     ngOnDestroy(): void {

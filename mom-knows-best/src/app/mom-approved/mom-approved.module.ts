@@ -5,6 +5,8 @@ import { AddPlaceComponent } from './add-place/add-place.component';
 import { PlaceDetailsComponent } from './place-details/place-details.component';
 import { RouterModule } from '@angular/router';
 import { MomRoutingModule } from './momApp-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -12,12 +14,14 @@ import { MomRoutingModule } from './momApp-routing.module';
   declarations: [
     AllPlacesComponent,
     AddPlaceComponent,
-    PlaceDetailsComponent
+    PlaceDetailsComponent,
+
   ],
   imports: [
     CommonModule,
     RouterModule,
-    MomRoutingModule
+    MomRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class MomApprovedModule { }
