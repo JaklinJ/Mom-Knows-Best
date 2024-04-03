@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MomApprovedModule } from './mom-approved/mom-approved.module';
 import { AppInterceptor, appInterceptorProvider } from './app.interceptor';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -23,15 +25,16 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
     HomeComponent,
     ContactComponent,
     AuthenticateComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     HeaderModule,
     UserModule,
-    HttpClientModule,
     MomApprovedModule,
+    SharedModule,
+    HttpClientModule,
     AppRoutingModule,
-    RouterModule,
     
   ],
   providers: [appInterceptorProvider],
