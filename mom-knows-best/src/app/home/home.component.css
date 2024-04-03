@@ -62,10 +62,10 @@
     float: left;
   }
   .Banner_sec .leftside h3 {
-    font-size: 36px;
+    font-size: 20px;
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
-    font-weight: 800;
+    font-weight: 1000;
     text-transform: uppercase;
     margin: 0px;
     line-height: 45px;
@@ -73,7 +73,7 @@
   .Banner_sec .leftside h3 span {
     color: #ff9000;
     font-family: "Open Sans", sans-serif;
-    font-weight: 600;
+    font-weight: 800;
     display: block;
   }
   .Banner_sec .leftside p {

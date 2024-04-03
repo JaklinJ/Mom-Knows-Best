@@ -11,13 +11,11 @@ export class ApiService {
 
   getPosts() {
     const { apiUrl } = environment;
-    //change the type when i create them
     return this.http.get<Post>(`/api/mom-approved`);
   }
 
   getSinglePost(id: string) {
     const { apiUrl } = environment;
-    //change the type
     return this.http.get<Post>(`/api/mom-approved/${id}`);
   }
 
@@ -41,5 +39,20 @@ export class ApiService {
     return this.http.post<Post>(`/api/mom-approved/${id}/like`, {}, {withCredentials: true});
   }
 
-  
+  editPost(
+    id: string|any,
+    title: string| any,
+    type: string|any,
+    location: string|any,
+    imageUrl: string|any,
+    rating: string|any,
+    description: string|any
+  ) {
+    return this.http.put<any>(`/api/mom-approved/${id}`, { title, type, location, imageUrl, rating, description });
+  }
+
+deletePost(id: string) {
+  return this.http.delete<Post>(`/api/mom-approved/${id}`)
+}
+
 }

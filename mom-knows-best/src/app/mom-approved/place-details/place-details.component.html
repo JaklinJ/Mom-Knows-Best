@@ -1,21 +1,22 @@
-<div class="card">
+<ng-container *ngIf="onToggle; else editForm">
+  <div class="card">
     <div class="card-image">
-      <img src="{{post.imageUrl}}" alt="Image" >
+      <img src="{{post?.imageUrl}}" alt="Image">
     </div>
     <div class="card-content">
-      <div class="card-title">{{post.title}}</div>
+      <div class="card-title">{{post?.title}}</div>
       <div class="card-details">
-        <p><b>Type:</b> {{post.type}}</p>
-        <p><b>Location:</b> {{post.location}}</p>
-        <p><b>Rating:</b> {{post.rating}}</p>
-        <p><b>Date:</b> {{post.date}}</p>
+        <p><b>Type:</b> {{post?.type}}</p>
+        <p><b>Location:</b> {{post?.location}}</p>
+        <p><b>Rating:</b> {{post?.rating}}</p>
+        <p><b>Date:</b> {{post?.date}}</p>
       </div>
       <div class="card-description">
-        <b>Description:</b> {{post.description}}
+        <b>Description:</b> {{post?.description}}
       </div>
       <ng-container *ngIf="!isOwner">
-        <button (click)="like()" *ngIf="!isLiked" >Like</button>
-      <button *ngIf="isLiked" [disabled]>You already liked this place!</button>
+        <button (click)="like()" *ngIf="!isLiked">Like</button>
+        <button *ngIf="isLiked" [disabled]>You already liked this place!</button>
       </ng-container>
       <ng-container *ngIf="isOwner">
         <button (click)="edit()">Edit</button>
@@ -23,3 +24,39 @@
       </ng-container>
     </div>
   </div>
+</ng-container>
+
+<ng-template #editForm>
+  <div class="add-place">
+    <form [formGroup]="form" (ngSubmit)="saveEditedForm(editFormDirective)" #editFormDirective="ngForm">
+      <!-- Add #editFormDirective="ngForm" to bind the FormGroupDirective -->
+      <h3>Edit A Kid Friendly Place</h3>
+      <div class="form-group">
+        <label for="title">Name</label>
+        <input type="text" name="title" id="title" required formControlName="title" [value]="post?.title">
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <input type="text" name="type" id="type" required formControlName="type" [value]="post?.type">
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location" required formControlName="location" [value]="post?.location">
+      </div>
+      <div class="form-group">
+        <label for="imageUrl">Image Url</label>
+        <input type="text" name="imageUrl" id="imageUrl" required formControlName="imageUrl" [value]="post?.imageUrl">
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input type="text" name="rating" id="rating" required formControlName="rating" [value]="post?.rating">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" required formControlName="description" [value]="post?.description">
+      </div>
+      <button type="submit">Save</button>
+      <button type="button" (click)="onToggle = true">Cancel</button>
+    </form>
+  </div>
+</ng-template>

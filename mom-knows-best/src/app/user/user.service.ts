@@ -13,7 +13,7 @@ export class UserService {
   private user$$ = new BehaviorSubject<User | undefined>(undefined);
   private user$ = this.user$$.asObservable();
   
-    user: any | undefined;
+    user: User | undefined;
     USER_KEY = '[user]';
   
     userSubscription: any; 
@@ -53,7 +53,7 @@ export class UserService {
   }
 
   getUserProfile() {
-    return this.http.get<any>('/api/profile').pipe(tap((user) => 
+    return this.http.get<User>('/api/profile').pipe(tap((user) => 
       this.user$$.next(user)))
     
   }

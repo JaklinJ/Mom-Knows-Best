@@ -263,7 +263,7 @@ app.delete("/api/mom-approved/:id/unlike", verifyToken, async (req, res) => {
 });
 
 // Edit a post
-app.put("/api/details/:id", verifyToken, async (req, res) => {
+app.put("/api/mom-approved/:id", verifyToken, async (req, res) => {
   try {
     const postId = req.params.id;
     const { title, type, location, imageUrl, rating, description } = req.body;
@@ -271,10 +271,9 @@ app.put("/api/details/:id", verifyToken, async (req, res) => {
     if (!post) {
       return res.status(404).json({ message: "Post not found" });
     }
-    if (post.author !== req.user.username) {
-      return res
-        .status(403)
-        .json({ message: "You are not authorized to edit this post" });
+
+    if (post.author.toString() !== req.userId) {
+      return res.status(403).json({ message: "You are not authorized to edit this post" });
     }
     post.title = title;
     post.type = type;
@@ -289,20 +288,13 @@ app.put("/api/details/:id", verifyToken, async (req, res) => {
   }
 });
 
-// Delete a post
 app.delete("/api/mom-approved/:id", verifyToken, async (req, res) => {
   try {
     const postId = req.params.id;
-    const post = await BlogPost.findById(postId);
+    const post = await BlogPost.findOneAndDelete({ _id: postId, author: req.userId });
     if (!post) {
-      return res.status(404).json({ message: "Post not found" });
+      return res.status(404).json({ message: "Post not found or you are not authorized to delete this post" });
     }
-    if (post.author !== req.user.username) {
-      return res
-        .status(403)
-        .json({ message: "You are not authorized to delete this post" });
-    }
-    await post.remove();
     res.status(200).json({ message: "Post deleted successfully" });
   } catch (err) {
     res.status(400).json({ message: err.message });
