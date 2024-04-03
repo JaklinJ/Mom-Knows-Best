@@ -1,27 +1,43 @@
 # MomKnowsBest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+MomKnowsBest is an application designed to help parents find and share kid-friendly places. Whether it's parks, playgrounds, museums, or restaurants, MomKnowsBest allows users to discover and recommend places that are suitable for children. Users can like and post places, helping other parents make informed decisions about where to take their kids.
 
-## Development server
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js installed on your machine
+- Angular CLI installed globally (`npm install -g @angular/cli`)
+- MongoDB installed and running locally (or you can use a cloud-based MongoDB service)
+
+### Installation
+
+1. Clone the repository:
+
+
+2. Navigate into the project directory:
+
+
+3. Install dependencies:
+
+
+### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Welcome to MomKnowsBest: Discover and Share Kid-Friendly Places!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Are you tired of endlessly searching for family-friendly destinations where both you and your little ones can have a blast? Look no further! KidSpotter is your ultimate guide to finding and sharing the best kid-friendly spots in town.
 
-## Build
+Discover Hidden Gems: Explore a curated collection of kid-approved places, from playgrounds and parks to museums and family-friendly restaurants. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Share Your Favorites: Found a hidden gem that your kids can't get enough of? Share it with the KidSpotter community! Post reviews, photos, and tips to help other parents discover new and exciting places to explore with their little ones.
 
-## Running unit tests
+Like and Save: Keep track of your favorite spots by liking them and saving them to your profile. Whether it's a cozy cafe with a play area or a thrilling amusement park, you can easily access your saved places whenever you're planning your next outing.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Start Exploring Today: Whether you're looking for a weekend adventure or a weekday playdate, KidSpotter has everything you need to discover and share unforgettable experiences with your family. Sign up now and start exploring the wonderful world of kid-friendly places!
