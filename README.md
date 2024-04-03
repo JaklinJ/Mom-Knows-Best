@@ -1,5 +1,5 @@
 
-![favicon-32x32](https://github.com/JaklinJ/Mom-Knows-Best/assets/122488493/eb09db26-f4d4-4237-83f3-909f46b02701)
+![android-chrome-512x512](https://github.com/JaklinJ/Mom-Knows-Best/assets/122488493/ef0efc8f-d059-4a92-8bfd-31dd6a848659)
 
 
 # MomKnowsBest
