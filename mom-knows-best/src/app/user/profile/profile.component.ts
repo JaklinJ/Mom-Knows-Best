@@ -23,6 +23,7 @@ export class ProfileComponent {
   }
 
   fetchUserProfile(): void {
+    debugger
     this.userService.getUserProfile()
       .pipe(
         map((profileData: any) => {

@@ -67,7 +67,7 @@ export class PlaceDetailsComponent implements OnInit {
   
 
   like():void {
-   
+   this.isLiked = true;
     
     this.activatedRoute.params.subscribe((data) => {
       const id = data['placeId'];

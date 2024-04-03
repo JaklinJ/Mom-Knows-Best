@@ -291,10 +291,20 @@ app.put("/api/mom-approved/:id", verifyToken, async (req, res) => {
 app.delete("/api/mom-approved/:id", verifyToken, async (req, res) => {
   try {
     const postId = req.params.id;
+
+    // Find and delete the post
     const post = await BlogPost.findOneAndDelete({ _id: postId, author: req.userId });
+
     if (!post) {
       return res.status(404).json({ message: "Post not found or you are not authorized to delete this post" });
     }
+
+    // Remove the deleted post's ID from the likedPosts array in user documents
+    await User.updateMany(
+      { likedPosts: postId },
+      { $pull: { likedPosts: postId } }
+    );
+
     res.status(200).json({ message: "Post deleted successfully" });
   } catch (err) {
     res.status(400).json({ message: err.message });

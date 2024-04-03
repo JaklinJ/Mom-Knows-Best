@@ -7,7 +7,6 @@ import { HeaderModule } from './core/core.module';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
-import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MomApprovedModule } from './mom-approved/mom-approved.module';
@@ -23,7 +22,6 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent,
     AuthenticateComponent,
     NotFoundComponent,
   ],
