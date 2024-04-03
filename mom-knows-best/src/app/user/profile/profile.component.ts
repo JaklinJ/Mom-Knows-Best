@@ -11,9 +11,9 @@ import { ApiService } from 'src/app/api.service';
 export class ProfileComponent {
   username: string = '';
   likedPosts: any[] = [];
-  unlikedPosts: any[] = [];
   id: string[] = []
   
+  post: any[] = [];
   
   constructor(private userService: UserService, private apiService: ApiService) { }
 
@@ -29,7 +29,6 @@ export class ProfileComponent {
           
           this.username = profileData.username;
           this.likedPosts = profileData.likedPosts;
-          this.unlikedPosts = profileData.unlikedPosts;
           this.id.push(profileData.likedPosts)
           
           this.likedPosts.forEach(data => {
@@ -48,10 +47,6 @@ export class ProfileComponent {
       )
       .subscribe();
   }
-
-  post: any[] = [];
-    
-
  
   
 }

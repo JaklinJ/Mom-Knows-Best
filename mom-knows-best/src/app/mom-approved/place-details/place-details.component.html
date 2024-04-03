@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-image">
-      <img src="{{post.imageUrl}}" alt="Image">
+      <img src="{{post.imageUrl}}" alt="Image" >
     </div>
     <div class="card-content">
       <div class="card-title">{{post.title}}</div>
@@ -14,12 +14,12 @@
         <b>Description:</b> {{post.description}}
       </div>
       <ng-container *ngIf="!isOwner">
-        <button (click)="like()">Like</button>
-      <button>Unlike</button>
+        <button (click)="like()" *ngIf="!isLiked" >Like</button>
+      <button *ngIf="isLiked" [disabled]>You already liked this place!</button>
       </ng-container>
       <ng-container *ngIf="isOwner">
-        <button>Edit</button>
-        <button>Delete</button>
+        <button (click)="edit()">Edit</button>
+        <button (click)="delete()">Delete</button>
       </ng-container>
     </div>
   </div>

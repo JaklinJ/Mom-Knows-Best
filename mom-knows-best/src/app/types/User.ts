@@ -1,9 +1,10 @@
 export interface User {
-  '_id': string;
-  'posts': String[];
-  'username': string;
-  'password': string;
-  'created_at': string;
-  'updatedAt': string;
-  '__v': number;
+  "_id": {},
+  "username": string,
+  "password": string,
+  "rePassword": string,
+  "likedPosts": [],
+  "unlikedPosts": [],
+  "__v": number,
+  "owner": {}
 }

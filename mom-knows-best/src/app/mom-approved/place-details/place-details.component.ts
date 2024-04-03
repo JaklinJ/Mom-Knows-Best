@@ -10,8 +10,10 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./place-details.component.css'],
 })
 export class PlaceDetailsComponent implements OnInit {
+  errorMessage: string | null = null;
   post: any = {};
   
+  isLiked: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -21,17 +23,7 @@ export class PlaceDetailsComponent implements OnInit {
   ) {}
   isOwner: boolean = false;
 
-  // ngOnInit(): void {
-  //   this.activatedRoute.params.subscribe((data) => {
-  //     const id = data['placeId'];
-   
-  //     this.apiService.getSinglePost(id).subscribe((post) => {
-  //       this.post = post;
-  //       console.log(post.author._id);
-  //     });
-  //   });
 
-  // }
   ngOnInit(): void {
    
     this.activatedRoute.params.subscribe((data) => {
@@ -39,28 +31,40 @@ export class PlaceDetailsComponent implements OnInit {
       this.apiService.getSinglePost(id).subscribe((post) => {
         this.post = post;
        this.userService.getProfile().subscribe((user) => {
+     
         console.log(user.username, post.author.username);
         if(user.username === post.author.username) {
           this.isOwner = !this.isOwner;
         }
+
+        const likedPosts = user.likedPosts;
+        likedPosts.forEach((postId) => {
+          if (postId === id) {
+            this.isLiked = !this.isLiked
+          }
+          
+        })
        })
       });
     });
   }
 
+  
+
   like():void {
+   
+    
     this.activatedRoute.params.subscribe((data) => {
       const id = data['placeId'];
-      this.apiService.likePost(id).subscribe((like) => {
+
+        this.apiService.likePost(id).subscribe((like) => {
         console.log(like);
-        
       })
       
     })
   }
 
-  unlike():void {
+  edit(): void {}
 
-  }
- 
+  delete(): void {}
 }

@@ -7,7 +7,6 @@
       <div class="profile-info">
           <p class="profile-info-item"><strong>Username:</strong> {{ username }}</p>
           <p class="profile-info-item"><strong>Liked Posts:</strong> {{ likedPosts.length }}</p>
-          <p class="profile-info-item"><strong>Unliked Posts:</strong> {{ unlikedPosts.length }}</p>
       </div>
   </div>
 </div>
@@ -16,15 +15,6 @@
   <div *ngIf="likedPosts.length > 0" class="post-card">
       <h3>Liked Posts</h3>
       <div *ngFor="let item of post" class="post">
-          <h4><b>Title:</b> {{ item.title }}</h4>
-          <div class="post-photo"><img src="{{ item.imageUrl }}" alt=""></div>
-          <p>{{ item.description }}</p>
-          <!-- Add more details as needed -->
-      </div>
-  </div>
-  <div *ngIf="unlikedPosts.length > 0" class="post-card">
-      <h3>Unliked Posts</h3>
-      <div *ngFor="let item of unlikedPosts" class="post">
           <h4><b>Title:</b> {{ item.title }}</h4>
           <div class="post-photo"><img src="{{ item.imageUrl }}" alt=""></div>
           <p>{{ item.description }}</p>

@@ -13,8 +13,8 @@ errMsg = '';
 
   ngOnInit(): void {
     this.errorService.apiError$.subscribe((err: any) => {
-      console.log(err);
-      this.errMsg = err?.message || '';
+      console.log(err.error);
+      this.errMsg = err?.error?.message || '';
     })
   }
 }
